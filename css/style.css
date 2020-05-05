@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --main-black: #000000;
+    --main-dark-blue-color: #191970;
+    --main-blue-color: #0000cd;
+    --main-ocean: #11b8be;
+    --main-tile: #10a8bf;
+    --main-gradient: linear-gradient(180deg, rgba(0, 0, 206, 1) 0%, rgba(17, 184, 190, 1) 100%);
+    --main-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Navigation bar BEGIN */
+
+nav {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    box-shadow: var(--main-shadow);
+    top: 0;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    margin: 10px 25px;
+}
+
+#menu-ul {
+    float: right;
+    line-height: 80px;
+    margin-right: 25px;
+}
+
+#menu-ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px
+}
+
+.nav-link {
+    color: var(--main-ocean);
+    font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 7px 13px;
+}
+
+.nav-link:hover {
+    background-color: var(--main-ocean);
+    color: white;
+    transition: .5s;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.burgerbtn {
+    font-size: 30px;
+    color: var(--main-blue-color);
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:952px) {
+    .nav-link {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 858px) {
+    .burgerbtn {
+        display: block;
+    }
+    #menu-ul {
+        position: fixed;
+        width: 100%;
+        height: 80vh;
+        background: rgba(17, 184, 190, 0.9);
+        top: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav #menu-ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav #menu-ul li a {
+        font-size: 20px;
+        color: #eee;
+    }
+    .nav-link:hover {
+        background: none;
+        color: rgb(202, 202, 202);
+    }
+    #check:checked~#menu-ul {
+        top: 80px;
+    }
+}
+
+/* Navigation menu END */
